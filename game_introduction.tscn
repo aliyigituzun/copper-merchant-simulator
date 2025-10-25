@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwy8pv10hr8kk"]
+
+[ext_resource type="Texture2D" uid="uid://c40hcnywkq3gk" path="res://intrologo_plchldr.png" id="1_avqpc"]
+[ext_resource type="Script" uid="uid://cr11xxnvt8eey" path="res://game_introduction.gd" id="1_w2qmj"]
+[ext_resource type="Texture2D" uid="uid://b8l7sug7xnogr" path="res://gameintroplaceholder.jpg" id="2_16jh6"]
+
+[node name="GameIntroduction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.99762785, 1)
+script = ExtResource("1_w2qmj")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -24.00003
+offset_right = 300.0
+offset_bottom = 659.875
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9984733, 0.9869368)
+pivot_offset = Vector2(300, 0)
+theme_override_font_sizes/font_size = 33
+text = "The Haskells have owned the Copper trading business in Nottingham for centuries, however when the time came for the business to be handed down to the copper merchant, John W.T.F Haskell, the syndicate of Nottingham Old, robbed him of the business. Now with the life of his precious pet Obsidian at risk from starvation due to bankruptcy, John Haskell decides to take the fight to the Syndicate and get his family business back…
+"
+autowrap_mode = 2
+
+[node name="GameLogo" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -200.0
+offset_right = 350.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.5287113)
+texture = ExtResource("1_avqpc")
+expand_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_16jh6")
+metadata/_edit_use_anchors_ = true

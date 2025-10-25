@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var ui = $"../UI"
+
 var remaining_health = 20
 var score = 0
 var gems = 0
@@ -12,6 +14,7 @@ func add_score(added_score):
 
 func add_gems(added_gems):
 	gems += added_gems
+	ui.change_gems(gems)
 
 func _ready() -> void:
 	pass # Replace with function body.

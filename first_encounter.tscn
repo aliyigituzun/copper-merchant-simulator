@@ -1,13 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b71pchipl7dsv"]
+[gd_scene load_steps=2 format=3 uid="uid://b71pchipl7dsv"]
 
 [ext_resource type="Script" uid="uid://c6qy508lbunhl" path="res://first_encounter.gd" id="1_b77rh"]
-[ext_resource type="Texture2D" uid="uid://cwv6kurqllv75" path="res://diagonal_arrow.png" id="2_la0ra"]
 
 [node name="FirstEncounter" type="Node2D"]
 script = ExtResource("1_b77rh")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(179, 183)
-scale = Vector2(-2.9475691, -16.774088)
-texture = ExtResource("2_la0ra")
