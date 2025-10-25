@@ -1,9 +1,14 @@
-[gd_scene format=3 uid="uid://cdtgsqdoxs3t8"]
+[gd_scene load_steps=2 format=3 uid="uid://cdtgsqdoxs3t8"]
+
+[ext_resource type="Script" uid="uid://bbisq3uogewgo" path="res://scenes/player.gd" id="1_uwrxv"]
 
 [node name="Game" type="Node2D"]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="World" type="Node2D" parent="."]
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("1_uwrxv")
 
-[node name="Player" type="Node2D" parent="World"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="World" type="Node2D" parent="."]
