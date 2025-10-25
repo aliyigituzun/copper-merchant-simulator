@@ -11,5 +11,14 @@ config_version=5
 [application]
 
 config/name="Copper Merchant Simulator"
+run/main_scene="uid://co5vaaxcr705m"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://gamemanager.gd"
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
