@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://co5vaaxcr705m"]
 
-[ext_resource type="Script" uid="uid://djre13uyxqnb5" path="res://start_scene.gd" id="1_mbe3m"]
-[ext_resource type="Texture2D" uid="uid://d3p3yevnaatit" path="res://Background1.png" id="2_kyjdd"]
-[ext_resource type="Script" uid="uid://bui4eacvph678" path="res://testbaccarat.gd" id="3_jfucu"]
+[ext_resource type="Script" uid="uid://djre13uyxqnb5" path="res://scripts/start_scene.gd" id="1_u7rsi"]
+[ext_resource type="Texture2D" uid="uid://d3p3yevnaatit" path="res://Background1.png" id="2_i331m"]
+[ext_resource type="Script" uid="uid://bui4eacvph678" path="res://scripts/testbaccarat.gd" id="3_0kdh5"]
 
 [node name="StartScene" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_mbe3m")
+script = ExtResource("1_u7rsi")
 
 [node name="ButtonsWrapper" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -47,11 +47,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_kyjdd")
+texture = ExtResource("2_i331m")
 expand_mode = 3
 
 [node name="baccarat" type="Node2D" parent="."]
-script = ExtResource("3_jfucu")
+script = ExtResource("3_0kdh5")
 
 [connection signal="button_down" from="ButtonsWrapper/GameStartButton" to="." method="_on_game_start_button_button_down"]
 [connection signal="button_down" from="ButtonsWrapper/QuitButton" to="." method="_on_quit_button_button_down"]
