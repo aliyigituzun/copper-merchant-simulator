@@ -10,6 +10,9 @@ extends CanvasLayer
 @onready var j_haskell;
 @onready var enemy;
 
+var baccarat_class = load("res://scripts/baccaratmanager.gd")
+
+
 var dialogue;
 var array2d_index = 0
 var array_index = 0
@@ -57,6 +60,8 @@ func display_next_dialogue():
 
 func setup_fight():
 	dialogue_container.visible = false
+	var baccarat = baccarat_class.new()
+	print(baccarat.get_user_hand())
 	pass
 	
 func _ready() -> void:

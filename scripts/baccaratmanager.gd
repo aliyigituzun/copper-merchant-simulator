@@ -1,67 +1,67 @@
 class_name baccaratmanager
 
-var card_class = load("res://scenes/card.gd")
-var userhand=[]
-var enemyhand=[]
-var deck=[]
+var card_class = load("res://scripts/card.gd")
+var user_hand = []
+var enemy_hand = []
+var deck = []
 
 func _init():
-	initdeck()
+	init_deck()
  
-func initdeck():
+func init_deck():
 	deck.resize(52)
 	for s in range(4):
 		print("S="+str(s))
 		for n in range(13):
 			print("N="+str(n))
 			deck[s*13+n]=card_class.new(s,n)
-	initplayerhands()
+	init_player_hands()
 
-func initplayerhands():
-	for cardnum in range(4):
-		var tempnum=randi()%deck.size()
-		var tempcard=deck[tempnum]
-		userhand.append(tempcard	)
-		deck.remove_at(tempnum)
+func init_player_hands():
+	for card_num in range(4):
+		var temp_num=randi()%deck.size()
+		var temp_card=deck[temp_num]
+		user_hand.append(temp_card	)
+		deck.remove_at(temp_num)
 	for dassa in range(4):
-		var tempnum=randi()%deck.size()
-		var tempcard=deck[tempnum]
-		enemyhand.append(tempcard)
-		deck.remove_at(tempnum)
+		var temp_num=randi()%deck.size()
+		var temp_card=deck[temp_num]
+		enemy_hand.append(temp_card)
+		deck.remove_at(temp_num)
  
-func getuserhand():
-	return userhand
-func getenemyhand():
-	return enemyhand
-func userplaycard(card1, card2):
-	var damage=userhand[card1].getsuit()+userhand[card2].getsuit()
+func get_user_hand():
+	return user_hand
+func get_enemy_hand():
+	return enemy_hand
+func user_play_card(card1, card2):
+	var damage=user_hand[card1].get_suit()+user_hand[card2].get_suit()
 	if card1 > card2:
-		userhand.remove_at(card1)
-		userhand.remove_at(card2)
+		user_hand.remove_at(card1)
+		user_hand.remove_at(card2)
 	else:
-		userhand.remove_at(card2)
-		userhand.remove_at(card1)
-	populatehands()
+		user_hand.remove_at(card2)
+		user_hand.remove_at(card1)
+	populate_hands()
 	return damage
 func enemyplaycard(card1, card2):
-	var damage=enemyhand[card1].getsuit()+enemyhand[card2].getsuit()
+	var damage = enemy_hand[card1].get_suit() + enemy_hand[card2].get_suit()
 	if card1 > card2:
-		enemyhand.remove_at(card1)
-		enemyhand.remove_at(card2)
+		enemy_hand.remove_at(card1)
+		enemy_hand.remove_at(card2)
 	else:
-		enemyhand.remove_at(card2)
-		enemyhand.remove_at(card1)
-	populatehands()
+		enemy_hand.remove_at(card2)
+		enemy_hand.remove_at(card1)
+	populate_hands()
 	return damage
 
-func populatehands():
-	for isd in range(4-userhand.size()):
+func populate_hands():
+	for isd in range(4-user_hand.size()):
 		var tempnum=randi()%deck.size()
 		var tempcard=deck[tempnum]
-		userhand.append(tempcard)
+		user_hand.append(tempcard)
 		deck.remove_at(tempnum)
-	for isd in range(4-enemyhand.size()):
-		var tempnum=randi()%deck.size()
-		var tempcard=deck[tempnum]
-		enemyhand.append(tempcard)
-		deck.remove_at(tempnum)
+	for isd in range(4-enemy_hand.size()):
+		var temp_num=randi()%deck.size()
+		var temp_card=deck[temp_num]
+		enemy_hand.append(temp_card)
+		deck.remove_at(temp_num)

@@ -1,5 +1,5 @@
 extends Node
-var baccaratclass = load("res://scenes/baccaratmanager.gd")
+var baccaratclass = load("res://scripts/baccaratmanager.gd")
 var baccarat=baccaratclass.new()
 
 

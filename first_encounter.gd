@@ -46,7 +46,7 @@ func next_sequence():
 	sequence += 1
 	match sequence:
 		1:
-			print(3)
+			ui.setup_fight()
 			
 func _process(delta: float) -> void:
 	pass
