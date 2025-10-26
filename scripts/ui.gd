@@ -5,12 +5,15 @@ extends CanvasLayer
 @onready var gem_label = $"./GemContainer/GemLabel"
 @onready var dialogue_box =  $"./CenterContainer/DialogueBox/DialogueContainer/Dialogue"
 @onready var dialogue_container = $"./CenterContainer/DialogueBox"
+@onready var fight_box = $"./FightContainer/HBoxContainer"
 @onready var dialogue_done = false
+
 
 @onready var j_haskell;
 @onready var enemy;
 
 var baccarat_class = load("res://scripts/baccaratmanager.gd")
+var card_node = preload("res://scenes/card.tscn")
 
 
 var dialogue;
@@ -61,7 +64,10 @@ func display_next_dialogue():
 func setup_fight():
 	dialogue_container.visible = false
 	var baccarat = baccarat_class.new()
-	print(baccarat.get_user_hand())
+	for card in baccarat.get_user_hand():
+		var new_card = card_node.instantiate()
+		fight_box.add_child(new_card)
+		new_card.setup_card(card.suit, card.facevalue)
 	pass
 	
 func _ready() -> void:

@@ -11,7 +11,7 @@ func _ready() -> void:
 	tween.tween_property(label, "position", end_position, 1.0)
 	await tween.finished
 	tween.kill()
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(1).timeout
 	label.visible = false
 	
 	var tween1 = get_tree().create_tween()

@@ -3,10 +3,10 @@ class_name card
 var suit
 var facevalue
 
-func getsuit():
+func get_suit():
 	return suit
 
-func getfacevalue():#
+func get_facevalue():#
 	return facevalue
 
 func _init(suit,facevalue):

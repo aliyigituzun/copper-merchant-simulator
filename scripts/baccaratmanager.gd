@@ -11,9 +11,7 @@ func _init():
 func init_deck():
 	deck.resize(52)
 	for s in range(4):
-		print("S="+str(s))
 		for n in range(13):
-			print("N="+str(n))
 			deck[s*13+n]=card_class.new(s,n)
 	init_player_hands()
 
@@ -34,7 +32,7 @@ func get_user_hand():
 func get_enemy_hand():
 	return enemy_hand
 func user_play_card(card1, card2):
-	var damage=user_hand[card1].get_suit()+user_hand[card2].get_suit()
+	var damage=user_hand[card1].get_facevalue()+user_hand[card2].get_facevalue()
 	if card1 > card2:
 		user_hand.remove_at(card1)
 		user_hand.remove_at(card2)
@@ -44,7 +42,7 @@ func user_play_card(card1, card2):
 	populate_hands()
 	return damage
 func enemyplaycard(card1, card2):
-	var damage = enemy_hand[card1].get_suit() + enemy_hand[card2].get_suit()
+	var damage = enemy_hand[card1].get_facevalue() + enemy_hand[card2].get_facevalue()
 	if card1 > card2:
 		enemy_hand.remove_at(card1)
 		enemy_hand.remove_at(card2)
