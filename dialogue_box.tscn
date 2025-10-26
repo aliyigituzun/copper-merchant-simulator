@@ -8,3 +8,13 @@ offset_right = -252.0
 offset_bottom = -448.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 200.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2

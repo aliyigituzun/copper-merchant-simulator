@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdtgsqdoxs3t8"]
+[gd_scene load_steps=5 format=3 uid="uid://cdtgsqdoxs3t8"]
 
 [ext_resource type="Script" uid="uid://bbisq3uogewgo" path="res://scenes/player.gd" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://d1y2sjcfxdwna" path="res://scenes/ui.gd" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://ctgo2rtetb34u" path="res://dialogue_box.tscn" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://34cxpordk8pu" path="res://box.png" id="3_lbhrr"]
 
 [node name="Game" type="Node2D"]
 
@@ -9,15 +11,58 @@
 script = ExtResource("1_yqjtg")
 
 [node name="GemContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_bottom = 32.333336
+grow_horizontal = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+
+[node name="GemLabel" type="Label" parent="UI/GemContainer"]
+layout_mode = 2
+text = "Gems: 0"
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogueBox" parent="UI/CenterContainer" instance=ExtResource("2_lnu2h")]
 visible = false
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("3_lbhrr")
+patch_margin_left = 900
+patch_margin_top = 200
+
+[node name="DialogueContainer" type="MarginContainer" parent="UI/CenterContainer/DialogueBox"]
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 200.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+
+[node name="Dialogue" type="RichTextLabel" parent="UI/CenterContainer/DialogueBox/DialogueContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 40
+
+[node name="HealthContainer" type="MarginContainer" parent="UI"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
-[node name="GemLabel" type="Label" parent="UI/GemContainer"]
+[node name="HealthLabel" type="Label" parent="UI/HealthContainer"]
 layout_mode = 2
-text = "Gems: 0"
+text = "Health: 20"
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("1_uwrxv")
@@ -25,3 +70,5 @@ script = ExtResource("1_uwrxv")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="World" type="Node2D" parent="."]
+
+[connection signal="gui_input" from="UI/CenterContainer/DialogueBox" to="UI" method="_on_dialogue_box_gui_input"]

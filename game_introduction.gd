@@ -18,7 +18,7 @@ func _ready() -> void:
 	tween1.tween_property(game_logo, "modulate:a", 1.0, 1.0)
 	
 	await get_tree().create_timer(3).timeout
-	
+	print("I am the one who calls next dialogue")
 	GameManager.next_scene()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

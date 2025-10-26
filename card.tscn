@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv2imx6j55t0y"]
+
+[ext_resource type="Script" uid="uid://bfepxxruece25" path="res://card.gd" id="1_rjlel"]
+[ext_resource type="Texture2D" uid="uid://baiwhq652hvja" path="res://card_related/card.png" id="2_q5obu"]
+[ext_resource type="Texture2D" uid="uid://d0qswv4al43ps" path="res://card_related/clubs.png" id="3_q5obu"]
+[ext_resource type="FontFile" uid="uid://5froqex1ci6j" path="res://fonts/pixel_font.ttf" id="4_e484p"]
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_rjlel")
+
+[node name="CardSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_q5obu")
+
+[node name="TopRightSuit" type="Sprite2D" parent="CardSprite"]
+texture_filter = 1
+position = Vector2(70, -80)
+texture = ExtResource("3_q5obu")
+
+[node name="TopLeftSuit" type="Sprite2D" parent="CardSprite"]
+position = Vector2(-70, -80)
+scale = Vector2(0.9959757, 1.002987)
+texture = ExtResource("3_q5obu")
+
+[node name="BottomRightSuit" type="Sprite2D" parent="CardSprite"]
+position = Vector2(70, 80)
+rotation = 3.1415927
+texture = ExtResource("3_q5obu")
+
+[node name="BottomLeftSuit" type="Sprite2D" parent="CardSprite"]
+position = Vector2(-70, 80)
+rotation = 3.1415927
+texture = ExtResource("3_q5obu")
+
+[node name="MiddleSuit" type="Sprite2D" parent="CardSprite"]
+position = Vector2(2, 0)
+scale = Vector2(2, 2.0269775)
+texture = ExtResource("3_q5obu")
+
+[node name="TopLeftNumber" type="Label" parent="CardSprite"]
+texture_filter = 1
+offset_left = -75.0
+offset_top = -117.0
+offset_right = -35.0
+offset_bottom = -93.0
+scale = Vector2(0.9659168, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_e484p")
+theme_override_font_sizes/font_size = 27
+text = "1"
+
+[node name="TopRightNumber" type="Label" parent="CardSprite"]
+texture_filter = 1
+offset_left = 65.0
+offset_top = -117.0
+offset_right = 105.0
+offset_bottom = -66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_e484p")
+theme_override_font_sizes/font_size = 27
+text = "1
+"
+
+[node name="BottomLeftNumber" type="Label" parent="CardSprite"]
+texture_filter = 1
+offset_left = -65.0
+offset_top = 117.0
+offset_right = -25.0
+offset_bottom = 141.0
+rotation = 3.1415927
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_e484p")
+theme_override_font_sizes/font_size = 27
+text = "1"
+
+[node name="BottomRightNumber" type="Label" parent="CardSprite"]
+texture_filter = 1
+offset_left = 75.0
+offset_top = 117.0
+offset_right = 115.0
+offset_bottom = 155.0
+rotation = 3.1415927
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_e484p")
+theme_override_font_sizes/font_size = 27
+text = "1"

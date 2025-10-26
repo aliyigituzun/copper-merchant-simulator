@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx0d5o3kxm40p"]
+
+[ext_resource type="Texture2D" uid="uid://rlftbfklmuqg" path="res://maymun.png" id="1_jqvsf"]
+
+[node name="JHaskell" type="Node2D"]
+
+[node name="JHaskellSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jqvsf")

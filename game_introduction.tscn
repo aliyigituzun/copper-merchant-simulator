@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwy8pv10hr8kk"]
 
-[ext_resource type="Texture2D" uid="uid://c40hcnywkq3gk" path="res://intrologo_plchldr.png" id="1_avqpc"]
 [ext_resource type="Script" uid="uid://cr11xxnvt8eey" path="res://game_introduction.gd" id="1_w2qmj"]
 [ext_resource type="Texture2D" uid="uid://b8l7sug7xnogr" path="res://gameintroplaceholder.jpg" id="2_16jh6"]
+[ext_resource type="Texture2D" uid="uid://5c4ua1k11pmd" path="res://Logo.png" id="2_w2qmj"]
 
 [node name="GameIntroduction" type="Control"]
 layout_mode = 3
@@ -51,7 +51,7 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.5287113)
-texture = ExtResource("1_avqpc")
+texture = ExtResource("2_w2qmj")
 expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
