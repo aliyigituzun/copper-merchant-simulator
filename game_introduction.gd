@@ -8,7 +8,7 @@ extends Control
 func _ready() -> void:
 	var end_position = Vector2(-300.0, -300.0)
 	var tween = get_tree().create_tween()
-	tween.tween_property(label, "position", end_position, 10.0)
+	tween.tween_property(label, "position", end_position, 1.0)
 	await tween.finished
 	tween.kill()
 	await get_tree().create_timer(10).timeout
