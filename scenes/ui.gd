@@ -37,32 +37,34 @@ func setup_dialogue(dialogue_2Darr, scene):
 	dialogue_done = true
 
 func display_next_dialogue():
-	print('uuh')
-	dialogue_done = false
-	dialogue_box.text = ""
+	
+	dialogue_done = false #prevents the player from starting the next dialogue
+	dialogue_box.text = "" #resets the dialogue box
+	#checks if we are at the end of the dialogue sequence
 	if(array_index + 1 >= dialogue[array2d_index].size() and array2d_index + 1 >= dialogue.size()):
 		sequence_scene.next_sequence()
+		return
+	#checks if we are at the end of the dialogue array
 	if(array_index + 1 >= dialogue[array2d_index].size()):
 		array_index = 0
-		array2d_index += 1 
+		array2d_index += 1
 	else: 
 		array_index += 1
 	for i in dialogue[array2d_index][array_index].length():
-		await get_tree().create_timer(0.01).timeout
+		await get_tree().create_timer(0.01).timeout #dialogue spead
 		dialogue_box.text = dialogue_box.text + dialogue[array2d_index][array_index][i]
 	dialogue_done = true
 
 func setup_fight():
+	dialogue_container.visible = false
 	pass
 	
-
 func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-			
 
 func _on_dialogue_box_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
