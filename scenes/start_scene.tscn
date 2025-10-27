@@ -48,6 +48,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_i331m")
 expand_mode = 3
+stretch_mode = 6
 
 [connection signal="button_down" from="ButtonsWrapper/GameStartButton" to="." method="_on_game_start_button_button_down"]
 [connection signal="button_down" from="ButtonsWrapper/QuitButton" to="." method="_on_quit_button_button_down"]

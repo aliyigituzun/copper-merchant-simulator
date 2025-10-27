@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var gem_label = $"./GemContainer/GemLabel"
 @onready var dialogue_box =  $"./CenterContainer/DialogueBox/DialogueContainer/Dialogue"
 @onready var dialogue_container = $"./CenterContainer/DialogueBox"
-@onready var fight_box = $"./FightContainer/HBoxContainer"
+@onready var fight_box = $"./FightContainer"
 @onready var dialogue_done = false
 
 
@@ -29,7 +29,6 @@ func change_gems(new_gems):
 	gem_label.text = "Gems: " + str(new_gems)
 	
 func setup_dialogue(dialogue_2Darr, scene): 
-	print("setup dialogggg")
 	dialogue_container.visible = true
 	array2d_index = 0
 	array_index = 0
@@ -38,7 +37,7 @@ func setup_dialogue(dialogue_2Darr, scene):
 	dialogue_done = false
 	dialogue = dialogue_2Darr
 	for i in dialogue[array2d_index][array_index].length():
-			await get_tree().create_timer(0.05).timeout
+			await get_tree().create_timer(0.01).timeout
 			dialogue_box.text = dialogue_box.text + dialogue[array2d_index][array_index][i]
 	dialogue_done = true
 
@@ -65,7 +64,10 @@ func setup_fight():
 	dialogue_container.visible = false
 	var baccarat = baccarat_class.new()
 	for card in baccarat.get_user_hand():
+		print('Adding card')
 		var new_card = card_node.instantiate()
+		new_card.position.y += -110
+		fight_box.add_theme_constant_override("separation", new_card.get_node("CardSprite").texture.get_width()) 
 		fight_box.add_child(new_card)
 		new_card.setup_card(card.suit, card.facevalue)
 	pass

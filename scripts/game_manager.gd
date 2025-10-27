@@ -8,14 +8,11 @@ var scene = 0
 
 #this is to ensure that the game scene is not accessed before it is loaded
 func register_game_scene(scene) -> void: 
-	print("BROTHER YOU ARE WORKING WTF")
 	game_scene = scene
 	world_scene = scene.get_node_or_null("World")
 	if world_scene:
 		var game_introduction = preload("res://scenes/game_introduction.tscn").instantiate()
 		world_scene.add_child(game_introduction)
-		#var first_encounter = preload('res://first_encounter.tscn').instantiate()
-		#world_scene.add_child(first_encounter)
 
 func next_scene() -> void: 
 	scene +=1

@@ -19,7 +19,6 @@ func _ready() -> void:
 	player.setup_player(20)
 	var gemlabel = ui.get_node("GemContainer/GemLabel")
 	gemlabel.visible = true
-	print("I am working ah")
 	ui.setup_dialogue(dialogues1, scene)
 	
 func next_sequence():

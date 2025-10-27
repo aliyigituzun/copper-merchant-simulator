@@ -1,17 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwy8pv10hr8kk"]
 
 [ext_resource type="Script" uid="uid://cr11xxnvt8eey" path="res://scripts/game_introduction.gd" id="1_w2qmj"]
-[ext_resource type="Texture2D" uid="uid://b8l7sug7xnogr" path="res://gameintroplaceholder.jpg" id="2_16jh6"]
 [ext_resource type="Texture2D" uid="uid://5c4ua1k11pmd" path="res://Logo.png" id="2_w2qmj"]
+[ext_resource type="Texture2D" uid="uid://d3l71ik7gj2qv" path="res://game_intro_background.png" id="3_05fta"]
 
 [node name="GameIntroduction" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.99762785, 1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_w2qmj")
 
 [node name="Label" type="Label" parent="."]
@@ -44,15 +49,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -350.0
-offset_top = -200.0
-offset_right = 350.0
-offset_bottom = 200.0
+offset_left = -468.34848
+offset_top = -329.0
+offset_right = 440.6515
+offset_bottom = 821.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.5287113)
 texture = ExtResource("2_w2qmj")
-expand_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -61,5 +65,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_16jh6")
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("3_05fta")
+expand_mode = 1
